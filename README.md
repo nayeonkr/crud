@@ -9,4 +9,15 @@ code .
 
 uv add "fastapi[standard]"
 
+``` 
+
+## run server
+
 ```
+uv run fastapi dev
+
+```
+
+## CRUD
+> create, read, update, delete
+
