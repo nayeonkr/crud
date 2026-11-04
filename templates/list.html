@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-     <h1>게시판</h1>
-
+    <h1>게시판</h1>
+    <a href="/posts/new">작성하기</a>
+    
     {% for post in posts %}
     <!-- <li>{{ post['title'] }}</li> -->
     <li>{{ post.title }}
