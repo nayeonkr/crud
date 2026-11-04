@@ -7,9 +7,12 @@ templates = Jinja2Templates(directory='templates')
 
 # 가상 데이터
 posts ={
-    1: {"id": 1, "title": "", "content": ""},
+    1: {"id": 1, "title": "hi", "content": "반갑습니다"},
     2: {"id": 2, "title": "배고파요", "content": "뭐먹지"},
 }
+
+
+
 @app.get('/')
 def home():
     return {'hello': 'world'}
@@ -45,5 +48,14 @@ def post_list(request: Request):
 
 # 하나의 게시물 출력
 @app.get('/posts/{post_id}')
-def post_detail():
-    pass
+def post_detail(request: Request, post_id: int):
+    
+    post = posts[post_id] #post라는 단수변수에 저장
+
+    return templates.TemplateResponse(
+        request=request,
+        name='detail.html',
+        context={'post': post}  
+    )
+
+    
