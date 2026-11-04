@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수정하기</h1>
+    
+    <form action="/posts/{{ post.id }}/update" method="post">
+        <input type="text" value="{{ post.title }}" name="title"/>
+        <input type="text" value="{{ post.content }}" name="content"/>
+        <input type="submit" />
+        </form>
+</body>
+</html>
