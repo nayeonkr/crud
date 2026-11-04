@@ -11,6 +11,12 @@
     <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
     <a href="/posts/{{ post.id }}/edit">수정하기</a>
+    
+    <a href="/posts/{{ post.id }}/delete">삭제하기(get)</a>
+
+    <form action="/posts/{{ post.id }}/delete" method="post">
+        <input type="submit" value="삭제하기(post)" />
+    </form>
     <a href="/posts"> 게시판으로 돌아가기</a>
 </body>
 </html>

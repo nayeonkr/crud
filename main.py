@@ -107,3 +107,12 @@ def post_update(post_id: int, title: str = Form(), content: str = Form()):
     posts[post_id] = new_post  # 전체 데이터에 적용시키기
 
     return RedirectResponse(f'/posts/{post_id}', status_code=303)
+
+
+@app.post('/posts/{post_id}/delete')
+def post_delete(post_id: int):
+    posts.pop(post_id) #데이터 삭제
+
+    return RedirectResponse('/posts', status_code=303)
+
+    
